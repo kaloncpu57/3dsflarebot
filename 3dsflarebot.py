@@ -8,10 +8,10 @@ BOT = input("Username of BOT: ")
 PASS = input("Password for BOT: ")
 
 def makeid(n):
-    return ''.join((random.choice("abcdefghijklmnopqrstuvwxyz1234567890") for i in range(n)))
+  return ''.join((random.choice("abcdefghijklmnopqrstuvwxyz1234567890") for i in range(n)))
 
 def newshout(msg):
-    s.post(add_shout, data={'d_token': makeid(20), 'text': msg, 'submit': 'Submit'})
+  s.post(add_shout, data={'d_token': makeid(20), 'text': msg, 'submit': 'Submit'})
 
 class Shout:
     def __init__(self, user, msg, date):
@@ -51,7 +51,7 @@ def cmdParse(cmd, user):
                     result += random.randint(1, sides)
                 newshout(reply + "You rolled %s dice with %s sides and got %s." % (dice, sides, result))
         except ValueError:
-            newshout("Sorry, please check how to use this command.")
+            newshout("Sorry, please check how to use this command. [url]http://pastebin.com/mhT7FXX0[/url]")
     elif cmds[0] == "!ftc":
         newshout(reply + "You flipped a coin and got %s." % ("heads" if random.randint(0, 1) == 0 else "tails"))
 
