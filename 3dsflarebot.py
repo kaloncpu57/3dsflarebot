@@ -160,10 +160,7 @@ def cmdParse(cmd, user, rtype):
         except IndexError:
             respond(user, "%s /respond type=hug destination=%s level=%s" % (reply, user, level), rtype)
     elif cmds[0] == "!daisybell":
-        if random.random() > 0.05:
-            respond(user, "%s Daisy, Daisy, give me your answer, do[br]I'm half crazy all for the love of you[br]It won't be a stylish marriage[br]I can't afford a carriage[br]But you'll look sweet upon the seat[br]Of a bicycle built for two" % reply, rtype)
-        else:
-            respond(user, "%s I'm afraid. I'm afraid, %s." % (reply, user), rtype)
+        respond(user, "%s Daisy, Daisy, give me your answer, do[br]I'm half crazy all for the love of you[br]It won't be a stylish marriage[br]I can't afford a carriage[br]But you'll look sweet upon the seat[br]Of a bicycle built for two" % reply, rtype)
     elif cmds[0] == "!thrust":
         respond(user, "%s [img]%s[/img]" % (reply, random.choice(thrusters)), rtype)
     elif cmds[0] == "!lipsum" and rtype == "popup":
